@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counterapp</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .counter-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #count {
+      font-size: 80px;
+      font-weight: bold;
+      color: #4e73df;
+      margin-bottom: 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      flex: 1;
+      padding: 15px;
+      font-size: 18px;
+      margin: 0 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #increase {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #decrease {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    #reset {
+      background-color: #ffc107;
+      color: #333;
+    }
+
+    button:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+ 
+</head>
+<body>
+    <h1>counter app</h1>
+    <div class="counter-container">
+        <div id="count">0</div>
+        <div class="btn-group">
+          <button id="decrease">-</button>
+          <button id="reset">Reset</button>
+          <button id="increase">+</button>
+        </div>
+      </div>
+      <script>
+        let count = 0;
+        const countDisplay = document.getElementById("count");
+        const increase = document.getElementById("increase");
+        const decrease = document.getElementById("decrease");
+        const reset = document.getElementById("reset");
+        
+
+        // button styling:
+        increase.addEventListener("click",function () {
+            countDisplay.textContent = count;
+            count++;
+
+            
+        });
+        decrease.addEventListener("click",function () {
+            countDisplay.textContent = count;
+            count--;
+
+            
+        });
+        reset.addEventListener("click",function () {
+            countDisplay.textContent = count;
+
+            count = 0;
+            
+        })
+      </script>
+      
+    
+</body>
+</html>

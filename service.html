@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Service Selector</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .view { display: none; }
+    .active-view { display: block; }
+  </style>
+</head>
+
+
+<body class="p-4">
+
+  <div class="container">
+    <h2 class="mb-4 text-center">💇‍♂️ Salon Service Selector</h2>
+
+    <!-- Buttons to switch views -->
+    <div class="mb-4 text-center">
+      <button class="btn btn-primary me-2" onclick="showView('view1')">Choose Services</button>
+      <button class="btn btn-success" onclick="showView('view2')">Booking Form</button>
+    </div>
+
+    <!-- View 1: Choose Services -->
+    <div id="view1" class="view active-view">
+      <h4>Available Services</h4>
+      <div class="mb-3">
+        <select id="serviceSelect" class="form-select">
+          <option value="Hair Cut">Hair Cut</option>
+          <option value="Shaving">Shaving</option>
+          <option value="Facial">Facial</option>
+          <option value="Hair Coloring">Hair Coloring</option>
+        </select>
+        <button class="btn btn-outline-primary mt-2" onclick="addService()">Add Service</button>
+      </div>
+
+      <ul id="serviceList" class="list-group">
+        <!-- Services will be added here -->
+      </ul>
+    </div>
+
+    <!-- View 2: Booking Form -->
+    <div id="view2" class="view">
+      <h4>Enter Your Details</h4>
+      <form onsubmit="submitBooking(event)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" id="name" class="form-control" required>
+        </div>
+
+        <h6>Selected Services:</h6>
+        <ul id="selectedServices" class="list-group mb-3"></ul>
+
+        <button type="submit" class="btn btn-success">Submit Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript will come here in next step:
+    function showView(viewId) {
+  // First hide all views
+  document.getElementById("view1").classList.remove("active-view");
+  document.getElementById("view2").classList.remove("active-view");
+
+  // Show the selected view
+  document.getElementById(viewId).classList.add("active-view");
+}
+// second js code:
+function addService() {
+  const select = document.getElementById("serviceSelect");
+  const selectedService = select.value;
+
+  const list = document.getElementById("serviceList");
+
+  const li = document.createElement("li");
+  li.className = "list-group-item d-flex justify-content-between align-items-center";
+  li.textContent = selectedService;
+
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "Remove";
+  removeBtn.className = "btn btn-sm btn-danger";
+  removeBtn.onclick = function () {
+    list.removeChild(li);
+  };
+
+  li.appendChild(removeBtn);
+  list.appendChild(li);
+}
+// 3rd js code:
+function submitBooking(event) {
+  event.preventDefault(); // Form reload agama stop
+
+  const name = document.getElementById("name").value;
+  const listItems = document.querySelectorAll("#serviceList li");
+
+  const selectedList = document.getElementById("selectedServices");
+  selectedList.innerHTML = ""; // clear previous
+
+  if (listItems.length === 0) {
+    alert("Please select at least one service!");
+    return;
+  }
+
+  listItems.forEach(item => {
+    const serviceText = item.childNodes[0].textContent;
+    const li = document.createElement("li");
+    li.className = "list-group-item";
+    li.textContent = serviceText;
+    selectedList.appendChild(li);
+  });
+
+  alert("Thank you " + name + "! Your booking is submitted. ✂️");
+}
+
+//   </script>
+//   <p>This is paragraph 1.</p>
+//   <p>This is paragraph 2.</p>
+//   <p>This is paragraph 3.</p>
+//   <script>
+//     const allParagraphs = document.querySelectorAll("p");
+// allParagraphs.forEach(p => p.textContent = "Updated Paragraph!");
+
+//   </script>
+  
+
+</body>
+</html>

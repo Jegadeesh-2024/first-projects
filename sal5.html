@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salon Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .radio-label {
+      border: 1px solid #ccc;
+      padding: 8px 15px;
+      border-radius: 30px;
+      margin: 0 8px 8px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .radio-input:checked + .radio-label {
+      background-color: #20c997;
+      color: white;
+      border-color: #20c997;
+      font-weight: bold;
+    }
+    .date-box {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      width: 70px;
+      text-align: center;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .date-box.active {
+      background-color: #20c997;
+      color: white;
+      font-weight: bold;
+    }
+    .time-slot {
+      border: 1px solid #ccc;
+      padding: 8px 15px;
+      border-radius: 10px;
+      margin: 6px;
+      cursor: pointer;
+    }
+    .time-slot.active {
+      background-color: #20c997;
+      color: white;
+      font-weight: bold;
+    }
+    .booking-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .btn-book {
+      background-color: #20c997;
+      color: white;
+    }
+    .footer-links {
+      font-size: 12px;
+      text-align: center;
+      color: #888;
+      padding: 20px 0;
+    }
+    .footer-links a {
+      color: #888;
+      margin: 0 4px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container my-5">
+  <!-- Staff Selection -->
+  <div class="section-title">Select staff</div>
+  <div class="d-flex flex-wrap mb-4">
+    <input type="radio" class="radio-input d-none" id="noPref" name="staff" checked>
+    <label class="radio-label" for="noPref">No preference</label>
+    
+    <input type="radio" class="radio-input d-none" id="ryan" name="staff">
+    <label class="radio-label" for="ryan">Ryan</label>
+
+    <input type="radio" class="radio-input d-none" id="john" name="staff">
+    <label class="radio-label" for="john">John</label>
+
+    <input type="radio" class="radio-input d-none" id="amaya" name="staff">
+    <label class="radio-label" for="amaya">Amaya</label>
+
+    <input type="radio" class="radio-input d-none" id="sam" name="staff">
+    <label class="radio-label" for="sam">Sam</label>
+
+    <input type="radio" class="radio-input d-none" id="anna" name="staff">
+    <label class="radio-label" for="anna">Anna</label>
+  </div>
+
+  <!-- Date Selection -->
+  <div class="section-title">Select Date</div>
+  <div class="d-flex align-items-center mb-4">
+    <i class="bi bi-chevron-left mx-2"></i>
+    <div class="d-flex flex-wrap">
+      <div class="date-box">01<br><small>Mon</small></div>
+      <div class="date-box active">02<br><small>Tue</small></div>
+      <div class="date-box">03<br><small>Wed</small></div>
+      <div class="date-box">04<br><small>Thu</small></div>
+      <div class="date-box">05<br><small>Fri</small></div>
+      <div class="date-box">06<br><small>Sat</small></div>
+      <div class="date-box">07<br><small>Sun</small></div>
+    </div>
+    <i class="bi bi-chevron-right mx-2"></i>
+  </div>
+
+  <!-- Time Selection -->
+  <div class="section-title">Select staff</div>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Early hours</strong></p>
+      <div class="d-flex flex-wrap">
+        <div class="time-slot">9:00 AM</div>
+        <div class="time-slot active">9:15 AM</div>
+        <div class="time-slot">9:30 AM</div>
+        <div class="time-slot">9:45 AM</div>
+        <div class="time-slot">10:00 AM</div>
+        <div class="time-slot">10:15 AM</div>
+        <div class="time-slot">10:30 AM</div>
+        <div class="time-slot">10:45 AM</div>
+        <div class="time-slot">11:00 AM</div>
+        <div class="time-slot">11:15 AM</div>
+        <div class="time-slot">11:30 AM</div>
+        <div class="time-slot">12:00 PM</div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Late hours</strong></p>
+      <div class="d-flex flex-wrap">
+        <div class="time-slot">4:00 PM</div>
+        <div class="time-slot">4:15 PM</div>
+        <div class="time-slot">4:30 PM</div>
+        <div class="time-slot">4:45 PM</div>
+        <div class="time-slot">5:00 PM</div>
+        <div class="time-slot">5:15 PM</div>
+        <div class="time-slot">5:30 PM</div>
+        <div class="time-slot">5:45 PM</div>
+        <div class="time-slot">6:00 PM</div>
+        <div class="time-slot">6:15 PM</div>
+        <div class="time-slot">6:30 PM</div>
+        <div class="time-slot">6:45 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart -->
+  <div class="section-title mt-5">Cart</div>
+  <div class="booking-card">
+    <p class="mb-2">3 Items</p>
+    <div class="d-flex justify-content-between">
+      <span>Haircut</span>
+      <span>$30</span>
+    </div>
+    <p class="text-muted ms-3">30 mins</p>
+
+    <div class="d-flex justify-content-between">
+      <span>Haircut</span>
+      <span>$30</span>
+    </div>
+    <p class="text-muted ms-3">30 mins</p>
+
+    <a href="#" class="text-decoration-none text-info small d-block my-2">Add Service</a>
+
+    <hr>
+    <p class="text-muted mb-1">Date: 02 Oct, 2022</p>
+    <p class="text-muted mb-3">Time: 9:15 AM</p>
+
+    <div class="d-flex justify-content-between text-muted">
+      <span>Net Total</span>
+      <span>$60</span>
+    </div>
+    <div class="d-flex justify-content-between text-muted">
+      <span>Tax</span>
+      <span>$30</span>
+    </div>
+    <div class="d-flex justify-content-between fw-bold">
+      <span>Total</span>
+      <span>$90</span>
+    </div>
+
+    <button class="btn btn-book w-100 mt-3">Book Now</button>
+  </div>
+</div>
+
+<!-- Footer Links -->
+<div class="footer-links">
+  Beauty Services in Beta 1 Plaza / Hair Services in Beta 1 Plaza / Beauty Services in Madhead Studios / Hair Services in Beta 1 Plaza / Hair Services in Beta 1 Plaza / Beauty Services in Madhead Studios
+</div>
+
+</body>
+</html>

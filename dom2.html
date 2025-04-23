@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom 2 </title>
+</head>
+<body>
+    <div id="container">
+        <h2>Heading</h2>
+        <p id="para1">Paragraph 1</p>
+        <p id="para2">Paragraph 2</p>
+      </div>
+<script>
+    let para = document.getElementById("para2");
+
+// Parent Element
+console.log(para.parentElement); // <div id="container">...</div>
+
+// Previous Sibling
+console.log(para.previousElementSibling); // <p id="para1">Paragraph 1</p>
+
+// First Child of container
+let container = document.getElementById("container");
+console.log(container.firstElementChild); // <h2>Heading</h2>
+
+// All children
+console.log(container.children); // [h2, p, p]
+
+// Notes:
+// parentElement – அந்த tag-oda upper level
+
+//previousElementSibling – munnaadi irukura tag
+
+// children – kulandhaigal mathiri, inside irukura elements
+
+
+</script> 
+
+
+<!-- create append child and remove elements -->
+
+<div id="list">
+    <p>Item 1</p>
+  </div>
+  <button onclick="addItem()">Add Item</button>
+<script>
+    function addItem() {
+  let newPara = document.createElement("p"); // Create new <p>
+  newPara.textContent = "New Item added!";   // Add text
+  document.getElementById("list").appendChild(newPara); // Add inside div
+}
+
+
+</script>  
+<!-- 1. inta button click panna enaku text add aganu task -->
+<ul id="myList">
+    <li>Item 1</li>
+  </ul>
+  <button onclick="addListItem()">Add Item</button>
+<script>
+function addListItem() {
+    let item = document.createElement("li");
+    item.textContent = "Hi Jegadeeesh ";
+    document.getElementById("myList").appendChild(item)
+    
+}
+</script>  
+
+
+<!-- 2.Remove elements -->
+<p id="removeMe">Remove this paragraph</p>
+<button onclick="removePara()">Remove</button>
+<script>
+    function removePara() {
+        let remove = document.getElementById("removeMe");
+        remove.remove();
+        
+    }
+</script>
+<!-- 💡 Practice 3: Show innerHTML and textContent
+ -->
+ <div id="test">Welcome <b>Jegadeesh</b></div>
+ <button onclick="showText()">Show</button>
+<script>
+    function showText() {
+        let test = document.getElementById("test");
+        console.log(test.innerHTML);
+        console.log(test.textContent);
+        
+        
+    }
+</script> 
+<!-- 💡 Practice 4: previousElementSibling
+ -->
+ <h2 id="title">This is a heading</h2>
+ <p id="desc">This is a paragraph</p>
+ <button onclick="showPrev()">Show Previous Elemeunt</btton>
+<script>
+    function showPrev() {
+        let desc = document.getElementById("desc");
+        let previous = desc.previousElementSibling;
+        console.log(previous);
+        
+        
+    }
+</script> 
+<!-- add image to click to button -->
+<div id="imageContainer"></div>
+<button onclick="addImage()">Add Image</button>
+<script>
+    function addImage() {
+        let img = document.createElement("img");
+        img.src = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTZvgGFkFYoCsV0e9OR5PUD1rx-jar2WEzn2FAG5jnNgHYvg8Qp9_9fuufCmEMUh8Uzljv6IkTC1VqDSvOsp_emjQ";
+        document.getElementById("imageContainer").appendChild(img)
+        
+    }
+</script>
+<!-- last element remove -->
+<ul id="myList1">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+  </ul>
+  <button onclick="removeLast()">Remove Last</button>
+  <script>
+  function removeLast() {
+    let list = document.getElementById("myList1");
+    list.lastElementChild.remove()
+  }
+</script>
+<!-- change text on clicking -->
+<p id="status">You haven't clicked the button.</p>
+<button onclick="changeText()">Click Me</button>
+<script>
+    function changeText() {
+        let para = document.getElementById("status");
+        para.textContent = "button Clicked!"
+        
+    }
+</script>
+<!-- toggle -->
+<p id="togglePara">I am visible!</p>
+<button onclick="togglePara()">Hide/Show</button>
+<script>
+    function togglePara() {
+        let visible = document.getElementById("togglePara");
+        if (visible.style.display === "none") {
+            visible.style.display = "block";
+            
+        } else {
+            visible.style.display = "none";
+
+            
+        }
+        
+    }
+</script>
+<!-- clcik panna 1 2 3 varuthu -->
+<ul id="List">
+    <li>Item 1</li>
+  </ul>
+  <button onclick="addListItem1()">Add Item</button>
+  <script>
+    function addListItem1() {
+        let list = document.getElementById("List");
+        let count = list.children.length ;
+        for (let i = 1; i <=10; i++) {
+           let item = document.createElement("li");
+           item.textContent = "item " + (count+i);
+           list.appendChild(item)
+            
+        }
+
+        
+
+        
+    }
+  </script>
+
+
+<!-- exam practice for day 1 and day2 -->
+ <ul id="ul">
+    <li>item 1</li>
+ </ul>
+ <button onclick="addItem()">Add Item</button>
+ <script>
+    function addItem() {
+        let address = document.getElementById("ul");
+        let newItem = document.createElement("li");
+        newItem.textContent = "new Item added";
+        address.appendChild(newItem)
+        
+    }
+ </script>
+ <!-- 2nd problem Add 10 Items Using Loop
+Button click → use for loop to add 10 <li> elements to list. -->
+    <ul id="List1">
+        <li>Item 1</li>
+      </ul>
+      <button onclick="addList()">Add Items</button>
+      
+      <script>
+        function addList() {
+          let items = document.getElementById("List1");
+          let count = items.children.length;
+      
+          for (let i = 1; i <= 10; i++) {
+            let list = document.createElement("li");
+            list.textContent = "Item " + (count + i);  // ✅ Correctly set li content
+            items.appendChild(list);                   // ✅ Append to ul
+          }
+        }
+      </script>
+
+
+      <!--Delete Last Item
+Create another button → click panna lastElementChild.remove() use panni last <li> delete aagattum.  -->
+    <ul id="myList2">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+      <button onclick="removeLast1()">Remove Last</button>
+      <script>
+        function removeLast1() {
+            let me = document.getElementById("myList2");
+            me.lastElementChild.remove()
+            
+        }
+      </script>
+      <!-- Show Paragraph Before Heading
+Create a <p> and <h2>. Click button → previousElementSibling use panni <p> text print aagattum. -->
+    <h2 id="title">This is a heading</h2>
+ <p id="desc1">This is a paragraph</p>
+ <button onclick="showPrev1()">Show Previous element</button>
+
+<script>
+    function showPrev1() {
+        let prev = document.getElementById("desc1");
+        let previous = prev.previousElementSibling;
+        console.log(previous)
+        
+    }
+</script>
+
+<!-- Add Image to a div
+Create a function: button click panna oru image <img> tag create aagattum and show inside a div. -->
+<div id="imageContainer1"></div>
+<button onclick="addImage1()">Add Image</button>
+<script>
+    function addImage1() {
+        let images = document.createElement("img");
+        images.src ="https://www.sacnilk.com/image/bunnyimagenews.php?newsid=1000022798";
+        images.style.width = "200px"
+        document.getElementById("imageContainer1").appendChild(images)
+        
+    }
+</script>
+</body>
+</html>

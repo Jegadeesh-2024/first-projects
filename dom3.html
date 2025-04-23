@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom day 3</title>
+</head>
+<body>
+    <input type="text" id="taskInput" placeholder="Enter task" />
+<button id="addBtn">Add Task</button>
+<ul id="taskList"></ul>
+
+<script>
+    
+//     const input = document.getElementById("taskInput");
+// const button = document.getElementById("addBtn");
+// const list = document.getElementById("taskList"); first 
+
+
+// button.addEventListener("click", function() {
+//   const taskText = input.value;  // Get the input value :     second
+// if (taskText !== "") { :third
+
+// const li = document.createElement("li");
+// li.textContent = taskText;  // Add the task text to the list item :fourth
+
+// input.value = "";  // Clear the input field for new tasks :fifth
+
+// add task elements
+
+
+
+
+  const input = document.getElementById("taskInput");
+  const button = document.getElementById("addBtn");
+  const list = document.getElementById("taskList");
+
+  button.addEventListener("click", function() {
+    const taskText = input.value;
+
+    // Check if the input is NOT empty
+    if (taskText !== "") {
+      const li = document.createElement("li");
+      li.textContent = taskText;
+      list.appendChild(li);
+      input.value = ""; // clear input
+    }
+  });
+</script>
+
+
+  
+  
+
+  
+   <head>
+    <title>Simple Add Task</title>
+  </head>
+  <body>
+  
+    <h2>My Task List</h2>
+  
+    <input type="text" id="taskInput1" placeholder="Enter a task" />
+    <button id="addbtn1">Add Task</button>
+  
+    <ul id="taskList1"></ul>
+  
+    <script>
+      const taskInput = document.getElementById("taskInput1");
+      const tasklist = document.getElementById("taskList1");
+      const addbtn1 = document.getElementById("addbtn1");
+  
+      addbtn1.addEventListener("click", function () {
+          const text = taskInput.value;
+          if (text !== "") {
+              const list = document.createElement("li");
+              list.textContent = text;
+              tasklist.appendChild(list);
+              taskInput.value = "";
+          }
+      });
+    </script>
+
+    <h2 id="some">Something</h2>
+    <button id ="alertt">buttons</button>
+    <script>
+        const alertt = document.getElementById("alertt");
+        const some = document.getElementById("some");
+        alertt.addEventListener("click",function () {
+            alert("do Something");
+
+            
+        })
+    </script>
+
+    
+  
+  </body>
+  </html>
+
+  <h2>📝 Task Manager</h2>
+  <input type="text" id="taskInput" placeholder="Enter your task" />
+  <button id="addBtn">Add Task</button>
+
+  <ul id="taskList"></ul>
+  <script>
+    const taskField = document.getElementById("taskInput");
+    const addbtn = document.getElementById("addBtn");
+    const taskList = document.getElementById("taskList");
+    addbtn.addEventListener("click",function () {
+      const textInput = taskField.value.trim();
+      if (textInput !=="") {
+        const li = document.createElement("li");
+        li.textContent = textInput;
+        taskList.appendChild(li);
+        taskField.value = "";
+        
+      }
+      
+    });
+  </script>
+  
+  
+</body>
+</html>

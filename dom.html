@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+</head>
+<style>
+#myParagraph1 {
+    opacity: 1; /* Fully visible */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in/fade-out effect */
+}
+#myParagraph1.hidden {
+    opacity: 0; /* Make the paragraph invisible */
+    pointer-events: none; /* Make sure the element is not clickable while hidden */
+}
+</style>
+<body>
+    <!-- <button id="colorButton">Change Background Color</button> -->
+
+
+    <script>
+    //    const button = document.getElementById("colorButton");
+    //    button.addEventListener("click",function(){
+    //     document.body.style.backgroundColor = getRandomColor() 
+    //    });
+    //    function getRandomColor() {
+    //         const letters = "0123456789ABCDEF";  // Hexadecimal values
+    //         let color = "#";  // Start with #
+    //         for (let i = 0; i < 6; i++) {
+    //             color += letters[Math.floor(Math.random() * 16)];  // Randomly pick a hex digit
+    //         }
+    //         return color;  // Return the random color
+    //     }
+    </script>
+
+    <!-- text content change when button clicked -->
+    <p id="textParagraph">This is the original text.</p>
+    <button id="changeTextButton">Click to Change Text</button>
+    <script>
+          const para1 = document.getElementById("textParagraph");
+        const button = document.getElementById("changeTextButton");
+        button.addEventListener("click",function () {
+            para1.textContent = "Hello Jegadeesh How are You!"
+            
+        });
+    </script>
+
+
+
+
+    <!-- background color change in divison -->
+    <div id="colorDiv" style="width: 200px; height: 200px; background-color: lightgray; margin: 20px;"></div>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        const colorDiv = document.getElementById("colorDiv");
+        const colorButton = document.getElementById("colorButton");
+
+        colorButton.addEventListener("click", function () {
+            colorDiv.style.backgroundColor = getRandomColor();
+        });
+
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+
+    </script>
+
+    <!-- show and hide problems -->
+    <p id="myPara" style="display: none;">Hello Jegadeesh! Welcome to DOM practice.</p>
+  
+    <button id="showBtn">Show</button>
+    <button id="hideBtn">Hide</button>
+<script>
+    const showBtn = document.getElementById("showBtn");
+    const hideBtn = document.getElementById("hideBtn");
+    const myPara = document.getElementById("myPara")
+    showBtn.addEventListener("click",function () {
+        myPara.style.display = "block";
+        
+    })
+    hideBtn.addEventListener("click",function () {
+        myPara.style.display = "none";
+        
+    })
+</script>  
+
+<!-- toggle colors -->
+<div id="colorBox" style="width: 200px; height: 200px; background-color: red; margin-bottom: 10px;"></div>
+<button id="toggleBtn">Toggle Color</button>
+<script>
+    const colorBox = document.getElementById("colorBox");
+    const toggleBtn = document.getElementById("toggleBtn");
+    toggleBtn.addEventListener("click",function () {
+        if (colorBox.style.backgroundColor === "red") {
+            colorBox.style.backgroundColor = "blue"
+            
+        } else{
+            colorBox.style.backgroundColor ="red"
+            
+        }
+        
+    })
+</script>
+
+
+
+
+<!-- text inside problems -->
+<p id="myParagraph">This is the old text.</p>
+<button id="changeTextBtn">Change Text</button>
+<script>
+const myParagraph = document.getElementById("myParagraph");
+const changeTextBtn = document.getElementById("changeTextBtn");
+changeTextBtn.addEventListener("click",function () {
+    myParagraph.textContent = "This is the new text!";
+    
+})
+</script>
+
+<!-- toggle visible of text show and hide -->
+<p id="myParagraph1">This is the paragraph to show or hide.</p>
+<button id="toggleVisibilityBtn">Toggle Visibility</button>
+<script>
+    const myParagraph1 = document.getElementById("myParagraph1");
+    const toggleVisibilityBtn = document.getElementById("toggleVisibilityBtn");
+    toggleVisibilityBtn.addEventListener("click",function () {
+        if (myParagraph1.style.display === "none") {
+            myParagraph1.style.display = "block";
+            myParagraph1.textContent = "This is the paragraph to show or hide.";
+            
+        } else{
+            myParagraph1.style.display ="none"
+            myParagraph1.textContent = "This is the paragraph to hidden now!.";
+            
+        }
+        
+    })
+</script>
+
+<!-- counter application -->
+
+  <style>
+    #counter {
+      font-size: 2em;
+      margin: 20px;
+    }
+    button {
+      font-size: 1.1em;
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="counter">0</div>
+  <button id="incrementBtn">Increment</button>
+  <button id="decrementBtn">Decrement</button>
+  <button id="resetBtn">Reset</button>
+
+  <script>
+    let counterValue = 0
+    const counter = document.getElementById("counter")
+    const incrementBtn = document.getElementById("incrementBtn")
+    const decrementBtn = document.getElementById("decrementBtn");
+    const resetBtn = document.getElementById("resetBtn")
+    incrementBtn.addEventListener("click",function () {
+        counterValue++;
+        counter.textContent = counterValue;
+        
+        
+    })
+    decrementBtn.addEventListener("click",function () {
+        counterValue--;
+        counter.textContent = counterValue;
+        
+    })
+    resetBtn.addEventListener("click",function () {
+        counterValue = 0;
+        counter.textContent = counterValue;
+        
+        
+    })
+    
+   
+  </script>
+</body>
+</html>
+
+
+</body>
+</html>

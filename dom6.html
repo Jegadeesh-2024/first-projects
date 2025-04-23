@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <label>Name:</label>
+        <input type="text" id="name"><br><br>
+      
+        <label>Email:</label>
+        <input type="text" id="email"><br><br>
+      
+        <button type="submit">Submit</button>
+      </form>
+      
+      <p id="errormsg" style="color: red;"></p>
+      <script>
+        function validateForm() {
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const errormsg = document.getElementById("errormsg");
+            if (name === "" || email === "") {
+                errormsg.textContent = "Please fill the details now";
+                return false;
+
+
+                
+            } else {
+                errormsg.textContent = "";
+                alert("form submitted successfully")
+                return true;
+                
+            }
+
+
+            
+        }
+      </script>
+      <head>
+
+  <style>
+    .highlight {
+      background-color: yellow;
+      border: 2px solid red;
+    }
+    .yellow {
+        color: aquamarine;
+        border: 3px solid greenyellow;
+    }
+    
+  
+</style>
+</head>
+
+  
+
+
+
+  <button id="btn">Click Me</button>
+
+  <div id="box" style="width:200px; height:200px; background-color: lightblue; margin-top: 20px;">
+  </div>
+
+  <script>
+    const button = document.getElementById("btn");
+    const box = document.getElementById("box");
+
+    button.addEventListener("click", function () {
+      box.classList.toggle("yellow");
+    });
+  </script>
+
+
+
+       
+</body>
+</html>

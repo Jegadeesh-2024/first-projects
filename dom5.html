@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>My List</h2>
+  <ul id="myList">
+    <li>Item 1</li>
+  </ul>
+
+  <button onclick="addItem()">Add Item</button>
+  <button onclick="removeItem()">Remove Last Item</button>
+
+  <script >
+    let count = 0;
+    function addItem() {
+        const myList = document.getElementById("myList");
+        const li = document.createElement("li");
+        li.textContent = "item" + count ;
+        myList.appendChild(li);
+        count++; 
+        
+    }
+    function removeItem() {
+        const ul = document.getElementById("myList");
+  const lastItem = ul.lastElementChild;
+  if (lastItem) {
+    ul.removeChild(lastItem);
+    count--;
+  }
+        
+    }
+
+  </script>
+
+
+</body>
+</html>

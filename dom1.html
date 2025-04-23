@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object model day 1</title>
+</head>
+<body>
+    <h2 id="welcome">Welcome to the JavaScript world</h2>
+    <p id="para">This is a simle paragraph</p>
+    <p id="color">Change color</p>
+    <script>
+        window.onload = function () {
+            document.getElementById("welcome").textContent = "welcome jegadeesh";
+            document.querySelector("p").textContent = "this is jegadeesh";
+            const color = document.getElementById("color");
+            color.style.color = "red"
+            
+        }
+    </script>
+    <!-- updated elements -->
+    <ul id="items">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        window.onload = function () {
+            const items = document.querySelectorAll("li");
+            items.forEach(li => li.textContent = "items will be added 4")
+            
+
+            // 
+        }
+    </script>
+        <button >Change color</button>
+        <script>
+             const button = document.querySelector("button");
+  button.onclick = function () {
+    document.body.style.backgroundColor = "lightblue"; // ✅ Fixed here
+  };
+           
+            
+        </script>
+
+        <!-- toggle exercise -->
+         <p id="js">I love javascript</p>
+         <button id="msg">toggle messages</button>
+         <script>
+            window.onload = function () {
+                const js = document.getElementById("js");
+            const msg = document.getElementById("msg");
+            msg.onclick = function () {
+                if (js.style.display ==="none") {
+                    js.style.display = "block"
+                    
+                } else {
+                  js.style.display ="none"
+                    
+                }
+                
+            }
+                
+            }
+            
+         </script>
+
+
+</body>
+</html>

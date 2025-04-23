@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+     crossorigin="anonymous"></script>
+     <!-- Correct FontAwesome Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<!-- css -->
+<style>
+    /* header */
+    #header {
+            background-color: #2d3338;
+            color: white;
+            padding: 20px;
+            border-radius: 10px
+    }
+    .view-map {
+        color: lightgreen;
+        
+    }
+    .nav-link {
+        color: #00bcd4 !important;
+    }
+    .service-item {
+        font-size: 20px;
+        padding: 20px;
+
+    }
+
+    /* button */
+    .btn-btn {
+        background-color: #00bcd4;
+        color: white;
+    }
+    .tab:hover {
+        color: aquamarine
+        ;
+    }
+    /* staffs card */
+    .ryan.active {
+        background-color: #00bcd4;
+       
+    }
+    .staff-select {
+            margin: 20px 0;
+        }
+        .staff-option {
+        
+            padding: 10px 20px;
+            
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        .bi-circle {
+            padding: 10px;
+            font-size: 40px;
+        }
+        .bi-circle-fill {
+            color:#00bcd4;
+            padding: 5px;
+
+        }
+        
+        .select-date {
+            margin: 20px 0;
+        }
+        .date-option {
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 70px;
+            height: 80px;
+            
+            margin: 15px;
+
+        }
+        .arrow {
+            font-size: 40px;
+            cursor: pointer;
+            margin-top: 5px;
+            padding: 20px;
+        }
+        .date-option.active {
+            background-color: #00bcd4;
+            color: white;
+            font-weight: bolder;
+        }
+        .time-slot {
+            border: 1px solid #dee2e6;
+            padding: 8px 15px;
+            border-radius: 15px;
+            margin: 5px;
+            cursor: pointer;
+            
+        }
+        .time-slot.active {
+            background-color: #00bcd4;
+            color: white;
+        }
+        /* form */
+        .form-section {
+      max-width: 500px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+    }
+    .form-label {
+      font-weight: 600;
+    }
+    .calendar-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .bi-info-circle-fill {
+        color: #00bcd4;
+    }
+
+    .bi-gift {
+        font-size: 60px;
+        color: #6E80A1;
+    }
+        
+
+</style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8" id="header">
+                <!-- Your existing header content -->
+            
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-light text-dark p-2 rounded me-3">N</div>
+                    <div>
+                        <h4 class="mb-0">Natural Beauty Salon, Spa and Wellness Center</h4>
+                        
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <i class="bi bi-geo-alt"></i> 319, Bin Souqat centre, Rashidiya branch, UAE
+                    <a href="#" class="view-map p-5">View Map</a>
+                </div>
+                <div class="mb-2">
+                    <i class="bi bi-clock"></i> 9:00 AM to 9:00 PM
+                </div>
+                <div>
+                    <i class="bi bi-lightning"></i> Instant booking
+                    <p class="rating">★ 4.8</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/705255/pexels-photo-705255.jpeg" alt="Salon" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>          <!--header closing div tag-->
+<div class="container">
+    <ul class="nav nav-tabs" id="salonTabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#services"><h1 class="tab">Services</h1></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#gift-vouchers"><h1 class="tab">Gift Vouchers</h1></a>
+        </li>
+            </ul>
+   
+    
+    <div class="tab-pane fade" id="gift-vouchers">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="service-item mt-5">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>Daughter's Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                        </label>
+                        <span class="float-end fw-bold">$50</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check ">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>fatherss Day</h3>
+                            <p class="text-muted">Validity:30 days voucher value : $60</p>
+                        </label>
+                        <span class="float-end fw-bold">$60</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>World Smile Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $40</p>
+                        </label>
+                        <span class="float-end fw-bold">$40</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>Hallowen Day</h3>
+                            <p class="text-muted">Validity:30 days voucher value : $100</p>
+                        </label>
+                        <span class="float-end fw-bold">$100</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>World Kindness Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $60</p>
+                        </label>
+                        <span class="float-end fw-bold">$60</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>International Mens Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $60</p>
+                        </label>
+                        <span class="float-end fw-bold">$40</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>Thanks Giving Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $100</p>
+                        </label>
+                        <span class="float-end fw-bold">$100</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>Christmas </h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $50</p>
+                        </label>
+                        <span class="float-end fw-bold">$40</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>Valentines  Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $70</p>
+                        </label>
+                        <span class="float-end fw-bold">$50</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>Mothers  Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                        </label>
+                        <span class="float-end fw-bold">$70</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-item">
+                    <div class="form-check">
+                        <span><i class="bi bi-circle"></i> </span>
+
+                        <label class="form-check-label">
+                            <h3>Easters Day</h3>
+                            <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                        </label>
+                        <span class="float-end fw-bold">$80</span>
+                    </div>
+                </div>
+                <hr>
+                
+                <!-- Add more gift vouchers as needed -->
+            </div>
+            <div class="col-md-4">
+                
+                    <div class="">
+                        <h5>Your Cart is Empty</h5>
+
+                        <div class="cart " style="border: 1px solid gray; height: 300px; width: 400px;">
+
+                            <div class="icon text-center mt-5">
+                                
+                                <p><i class="bi bi-gift"></i></p>
+                                <!-- Cart items will be added here -->
+                                <p style="font-size: 20px; "> Surprise your loved ones with our Gift. Vouchers, Select some Gift Vouchers.</p>
+
+                            </div>
+                            
+                            </div>
+                </div>
+            
+    </div>
+     </div>
+    
+</div>
+    
+</body>
+</html>

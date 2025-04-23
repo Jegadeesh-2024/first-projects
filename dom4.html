@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #deleteBtn {
+            background-color: red;
+            color: white;
+            margin: 10px;
+            border-radius: 20px;
+            border: white;
+            padding: 10px;
+        }
+        #addBtn {
+            background-color: green;
+            color: white;
+            margin: 10px;
+            border-radius: 20px;
+            border: white;
+            padding: 10px;
+        }
+        #taskInput {
+            
+            margin: 20px;
+            border-radius: 20px;
+            
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>📝 Task Manager</h2>
+  <input type="text" id="taskInput" placeholder="Enter your task" />
+  <button id="addBtn">Add Task</button>
+  <button id="deleteBtn">Delete Task</button>
+
+  <ul id="taskList"></ul>
+  <script>
+    const taskField = document.getElementById("taskInput");
+    const addbtn = document.getElementById("addBtn");
+    const taskList = document.getElementById("taskList");
+    const deleteBtn = document.getElementById("deleteBtn");
+    addbtn.addEventListener("click",function () {
+      const textInput = taskField.value.trim();
+      if (textInput !=="") {
+        const li = document.createElement("li");
+        li.textContent = textInput;
+        taskList.appendChild(li);
+        taskField.value = "";
+        
+      }
+      
+      
+      
+    });
+    deleteBtn.addEventListener("click", function () {
+      const lastTask = taskList.lastElementChild;
+      
+      if (lastTask) {
+        lastTask.remove();
+      } else {
+        alert("No tasks to delete!");
+      }
+    });
+  </script>
+
+
+<!-- toggle exercise -->
+  <button id="toggleBtn">Toggle Box</button>
+  <div id="box" class="box">I am a box</div>
+  
+  <style>
+    .box {
+      width: 150px;
+      height: 100px;
+      background-color: gray;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    .active {
+      background-color: rgb(25, 43, 25);
+      transform: scale(1.1);
+    }
+  </style>
+  
+  <script>
+    const box = document.getElementById("box");
+    const toggleBtn = document.getElementById("toggleBtn");
+  
+    toggleBtn.addEventListener("click", function () {
+      box.classList.toggle("active");
+    });
+  </script>
+  <!-- toggle -->
+  <h2>🌗 Light / Dark Mode Toggle</h2>
+  <button id="modeToggle">Toggle Mode</button>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: white;
+      color: black;
+      transition: 0.3s;
+      padding: 20px;
+    }
+
+    .dark-mode {
+      background-color: #222;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    const mode = document.getElementById("modeToggle");
+    mode.addEventListener("click",function () {
+        document.body.classList.toggle("dark-mode");
+
+        
+    })
+  </script>
+  
+
+  
+  
+</body>
+</html>
